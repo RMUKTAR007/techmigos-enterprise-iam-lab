@@ -1,31 +1,92 @@
-# 01 - Okta Organization Setup
+# 🚀 TechMigos Enterprise IAM Lab | Okta Organization Setup
 
-## Objective
-Set up a new Okta Identity Engine organization for the TechMigos Enterprise IAM Lab.
+The first phase of building the TechMigos Enterprise IAM Lab focused on deploying and configuring an Okta Identity Engine (OIE) tenant. This environment serves as the central Identity Provider (IdP) for all subsequent IAM projects within this repository.
 
-## Environment
-- Okta Identity Engine
-- Developer Account
-- Google Chrome
-- Windows 11
+---
 
-## Tasks Completed
-- Created an Okta Developer organization
-- Configured the administrator account
-- Explored the Admin Console
-- Reviewed Universal Directory
-- Reviewed Applications
-- Reviewed Groups
-- Reviewed Security policies
+## Project Goal
+
+Build a production-style Okta environment capable of supporting:
+
+- Enterprise user lifecycle management
+- Application Single Sign-On (SSO)
+- Authentication Policies
+- Multi-Factor Authentication (MFA)
+- Universal Directory
+- Profile & Attribute Mapping
+- Group-based Access Control
+- System Log Monitoring
+
+---
+
+## Lab Environment
+
+| Component | Value |
+|-----------|------|
+| Identity Platform | Okta Identity Engine |
+| Organization | TechMigos Enterprise Lab |
+| IAM Role | Super Administrator |
+| Deployment Type | Cloud |
+| Repository | TechMigos Enterprise IAM Lab |
+
+---
+
+## Deployment
+
+✔ Created the Okta organization
+
+✔ Verified administrator access
+
+✔ Explored the Admin Console
+
+✔ Reviewed Universal Directory
+
+✔ Reviewed Applications
+
+✔ Reviewed Security Policies
+
+✔ Reviewed Reports & System Log
+
+✔ Confirmed tenant readiness
+
+---
+
+## Repository Roadmap
+
+This project is the foundation for the following implementations:
+
+- User Lifecycle Management
+- Group Rules
+- Profile Editor
+- Attribute Mapping
+- Salesforce SAML
+- Zendesk SAML
+- Slack Integration
+- Authentication Policies
+- Network Zones
+- MFA
+- System Log Investigation
+
+---
+
+## Architecture
+
+*(Insert architecture diagram here)*
+
+---
+
+## Evidence
+
+| Screenshot | Description |
+|------------|-------------|
+| | Admin Dashboard |
+| | Universal Directory |
+| | Applications |
+| | Security |
+| | System Log |
+
+---
 
 ## Outcome
-The Okta organization was successfully configured and is ready for user, group, application, and security policy configuration.
 
-## Skills Demonstrated
-- Okta Administration
-- Identity and Access Management (IAM)
-- Okta Identity Engine
-- Environment Setup
-
-## Screenshots
-> Add screenshots here as you complete the lab.
+The Okta tenant was successfully deployed and is ready for enterprise IAM implementation.
