@@ -68,25 +68,5 @@ This project is the foundation for the following implementations:
 - System Log Investigation
 
 ---
-
-## Architecture
-
-*(Insert architecture diagram here)*
-
----
-
-## Evidence
-
-| Screenshot | Description |
-|------------|-------------|
-| | Admin Dashboard |
-| | Universal Directory |
-| | Applications |
-| | Security |
-| | System Log |
-
----
-
-## Outcome
-
-The Okta tenant was successfully deployed and is ready for enterprise IAM implementation.
+Admin Dashboard
+<img width="1910" height="820" alt="image" src="https://github.com/user-attachments/assets/af0e0a95-6a3d-4aac-bcbf-ae12e213f3ad" />
