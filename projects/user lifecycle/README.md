@@ -71,28 +71,24 @@ I managed users' attributes
 ---
 
 ### Application Assignment
+This is where users are assigned to applications
+<img width="902" height="696" alt="image" src="https://github.com/user-attachments/assets/6c8ec946-5376-43b6-b0cb-62476c334205" />
 
-*(Insert Screenshot)*
 
 ---
-
 ### Suspend User
 
-*(Insert Screenshot)*
+<img width="924" height="501" alt="image" src="https://github.com/user-attachments/assets/80e9743c-c577-4244-956b-a2cd4e3ec2c9" />
+
 
 ---
-
 ### Deactivate User
 
-*(Insert Screenshot)*
+<img width="1396" height="775" alt="image" src="https://github.com/user-attachments/assets/17432930-6a7b-4168-a0de-2f2cbff34a1b" />
+
 
 ---
 
-### Delete User
-
-*(Insert Screenshot)*
-
----
 
 ## Outcome
 
