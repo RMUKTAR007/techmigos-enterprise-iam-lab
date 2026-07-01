@@ -52,8 +52,9 @@ Implement and manage the complete lifecycle of enterprise users, from account cr
 ---
 
 ### User Profile
+I managed users' attributes
+<img width="1262" height="825" alt="image" src="https://github.com/user-attachments/assets/ee1c2001-c5b9-4025-b8f3-e3afa090f64e" />
 
-*(Insert Screenshot)*
 
 ---
 
