@@ -46,7 +46,8 @@ Implement and manage the complete lifecycle of enterprise users, from account cr
 
 ### Create User
 
-*(Insert Screenshot)*
+<img width="1368" height="769" alt="image" src="https://github.com/user-attachments/assets/f4ab47ee-7621-4e3b-b74e-01f0be5ad318" />
+
 
 ---
 
