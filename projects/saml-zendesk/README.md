@@ -40,17 +40,18 @@ The goal was to centralize authentication, enable secure SSO for Zendesk team me
 
 ---
 
-# Step 1 - Add Zendesk Application in Okta
+# Step 1 - Added Zendesk Application in Okta
 
 Added the Zendesk application from the Okta Integration Network.
 
 📷 **Screenshot**
 
-> Insert image here
+> 
 
-```
-images/01-zendesk-app-added.png
-```
+<img width="703" height="816" alt="image" src="https://github.com/user-attachments/assets/53dfc239-00d5-43ee-8bd3-4ac545f5ba4d" />
+<img width="752" height="689" alt="image" src="https://github.com/user-attachments/assets/66f21e76-1340-4900-a90b-422b9f8678c4" />
+
+
 
 ---
 
