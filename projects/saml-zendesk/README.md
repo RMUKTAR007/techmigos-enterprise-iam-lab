@@ -53,6 +53,7 @@ Added the Zendesk application from the Okta Integration Network.
 
 
 
+
 ---
 
 # Step 2 - Configure General Settings
@@ -61,11 +62,10 @@ Configured the Zendesk subdomain and application settings.
 
 📷 **Screenshot**
 
-> Insert image here
+> <img width="732" height="784" alt="image" src="https://github.com/user-attachments/assets/844f5243-e88d-43b5-8099-6a2d412a51ce" />
+<img width="717" height="746" alt="image" src="https://github.com/user-attachments/assets/a6810421-3d30-4894-89bb-d228c82a08ad" />
 
-```
-images/02-general-settings.png
-```
+
 
 ---
 
