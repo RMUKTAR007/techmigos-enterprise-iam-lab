@@ -71,6 +71,11 @@ Configured:
 Assigned the Salesforce application to an Okta group.
 
 Verified that assigned users could see the Salesforce application on the Okta dashboard.
+<img width="792" height="118" alt="image" src="https://github.com/user-attachments/assets/a7960827-afcd-4b59-99cf-1c7e914e1a32" />
+
+<img width="773" height="52" alt="image" src="https://github.com/user-attachments/assets/b2bd144b-d75c-4fa4-a533-d82c9d4031e1" />
+
+
 
 ---
 
