@@ -125,25 +125,6 @@ Redirected users to authenticate through Okta.
 <img width="861" height="133" alt="image" src="https://github.com/user-attachments/assets/07f847ab-37d2-4060-9e76-1dd1c57e3380" />
 
 
-# Step 6 - Activate SAML
-
-Activated the SAML configuration.
-
-Final Status:
-
-- ✅ Active
-- ✅ Primary for Team Members
-
-📷 **Screenshot**
-
-> Insert image here
-
-```
-images/06-saml-active.png
-```
-
----
-
 # Authentication Flow
 
 ## IdP-Initiated
