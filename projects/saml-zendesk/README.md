@@ -102,8 +102,6 @@ Configured:
 
 📷 **Screenshot**
 
-> Insert image here
-
 <img width="732" height="784" alt="image" src="https://github.com/user-attachments/assets/3f0d95da-2fd7-4a3e-8ebd-b87cae7fa3b6" />
 
 
