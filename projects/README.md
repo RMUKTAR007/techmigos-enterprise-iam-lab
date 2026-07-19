@@ -87,7 +87,7 @@ The Applications section is where enterprise applications are integrated with Ok
 ---
 ## Security
 The Security section is used to configure authentication policies, multifactor authentication (MFA), network zones, behavior detection, and other controls that protect user access.
-<img width="1852" height="882" alt="image" src="https://github.com/user-attachments/assets/a27ef7b9-a0a4-4796-a20d-b4f9afd8774b" />
+ <img width="1646" height="591" alt="image" src="https://github.com/user-attachments/assets/808cb4c4-2b8b-454b-95cd-08966186b838" />
 
 ---
 
