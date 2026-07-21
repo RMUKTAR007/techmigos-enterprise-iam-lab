@@ -70,7 +70,9 @@ Changes included:
 The organization was branded as **TechMigos Enterprise**.
 
 📷 Screenshot
-_Add image here_
+_Added image here_
+<img width="1298" height="879" alt="image" src="https://github.com/user-attachments/assets/7f2a2c52-ecba-46ab-909f-53fe56754e6b" />
+
 
 ---
 
