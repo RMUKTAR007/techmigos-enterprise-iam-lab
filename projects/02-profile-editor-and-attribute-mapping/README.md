@@ -29,8 +29,8 @@ Configure and validate attribute mappings to ensure accurate identity data is sh
 
 Before making changes, I reviewed the default Okta User Profile to understand which attributes exist out of the box (name, email, login, etc.) and which would need to be added for enterprise use cases.
 
-![Okta User Profile](<img width="781" height="762" alt="image" src="https://github.com/user-attachments/assets/8079503d-e4c4-4a1a-a6df-5429e6f9dea9" />
-)
+[<img width="915" height="734" alt="image" src="https://github.com/user-attachments/assets/feb18a13-1c1b-4c1b-935b-7f295561fb32" />
+]
 
 ---
 
@@ -38,7 +38,8 @@ Before making changes, I reviewed the default Okta User Profile to understand wh
 
 I opened the Profile Editor under Directory to see how Okta separates the **Okta User Profile** (source of truth) from **Application User Profiles** (per-app attribute sets).
 
-![Profile Editor](./screenshots/02-profile-editor.png)
+[<img width="773" height="792" alt="image" src="https://github.com/user-attachments/assets/188faa07-d28c-450d-9ac0-a2d8ec310566" />
+]
 
 ---
 
@@ -46,7 +47,8 @@ I opened the Profile Editor under Directory to see how Okta separates the **Okta
 
 Standard attributes don't cover every enterprise need, so I added custom attributes to the Okta User Profile to support downstream use cases.
 
-![Custom Attributes](./screenshots/03-custom-attributes.png)
+[<img width="805" height="556" alt="image" src="https://github.com/user-attachments/assets/4adc2169-c323-4229-822b-3d2d21f360a2" />
+]
 
 ---
 
@@ -62,7 +64,8 @@ I configured bidirectional attribute mappings for both Salesforce and Zendesk, d
 | `user.lastName` | `lastName` | Push (always applied) |
 | `user.email` | `email` | Push (always applied) |
 
-![Okta to Salesforce Mapping](./screenshots/04-okta-to-salesforce.png)
+[<img width="731" height="494" alt="image" src="https://github.com/user-attachments/assets/5696ee7e-ccab-4717-869f-0968629bdbcc" />
+]
 
 ### Salesforce → Okta (Inbound)
 
@@ -72,7 +75,8 @@ I configured bidirectional attribute mappings for both Salesforce and Zendesk, d
 | `appuser.lastName` | `lastName` | Apply on user creation only |
 | `appuser.email` | `email` | Apply on user creation only |
 
-![Salesforce to Okta Mapping](./screenshots/05-salesforce-to-okta.png)
+[<img width="703" height="552" alt="image" src="https://github.com/user-attachments/assets/36ed1c08-1535-4dc6-a111-7676b6163f2e" />
+]
 
 ### Zendesk → Okta (Inbound)
 
@@ -83,7 +87,7 @@ I configured bidirectional attribute mappings for both Salesforce and Zendesk, d
 | `appuser.lastName` | `lastName` | Apply on user creation only |
 | `appuser.email` | `email` | Apply on user creation only |
 
-![Zendesk to Okta Mapping](./screenshots/06-zendesk-to-okta.png)
+[PASTE IMAGE HERE]
 
 ### Okta → Zendesk (Outbound)
 
@@ -93,7 +97,7 @@ I configured bidirectional attribute mappings for both Salesforce and Zendesk, d
 | `user.lastName` | `lastName` | Apply on user creation only |
 | — | `userName` | Set by Zendesk |
 
-![Okta to Zendesk Mapping](./screenshots/07-okta-to-zendesk.png)
+[PASTE IMAGE HERE]
 
 **Note on Mapping Types:**
 Okta distinguishes between two mapping behaviors:
@@ -111,7 +115,7 @@ I tested the configured mappings to confirm attribute values flowed correctly in
 - No attribute value loss during transformation
 - Consistent formatting across applications
 
-![Mapping Validation](./screenshots/08-mapping-validation.png)
+[PASTE IMAGE HERE]
 
 ---
 
@@ -119,7 +123,7 @@ I tested the configured mappings to confirm attribute values flowed correctly in
 
 To confirm the mappings worked end-to-end, I updated a user's attribute in Okta and verified the change synchronized correctly to the connected application's profile.
 
-![Profile Sync Test](./screenshots/09-profile-sync-test.png)
+[PASTE IMAGE HERE]
 
 ---
 
