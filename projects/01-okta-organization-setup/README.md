@@ -107,6 +107,7 @@ With branding in place, I reviewed each major administrative section to understa
 
 📷 Screenshot
 _Added image here_
+
 <img width="733" height="519" alt="image" src="https://github.com/user-attachments/assets/ec7b4eab-4bf9-496c-acf8-fa215eb99ed6" />
 
 
