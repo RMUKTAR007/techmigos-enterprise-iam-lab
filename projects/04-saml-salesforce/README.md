@@ -1,189 +1,80 @@
-# Salesforce SAML 2.0 SSO Integration
+# 🔐 Salesforce SAML 2.0 SSO Integration
 
-## Project Overview
-
-This project demonstrates how to configure Single Sign-On (SSO) between Okta and Salesforce using the SAML 2.0 protocol.
-
-The objective was to allow users to authenticate through Okta and securely access Salesforce without entering their Salesforce credentials.
-
----
+This project sets up Single Sign-On between Okta and Salesforce using SAML 2.0 — the goal being that users log in once through Okta and land in Salesforce without ever typing a Salesforce password.
 
 ## Environment
 
 | Component | Value |
-|----------|---------|
+|-----------|-------|
 | Identity Provider | Okta |
 | Service Provider | Salesforce Developer Edition |
 | Protocol | SAML 2.0 |
 | Authentication | IdP-Initiated SSO |
 | User Assignment | Okta Group |
 
----
+## What I did
 
-## Skills Demonstrated
+### 1. Set up the Salesforce side first
 
-- Configure a Custom SAML Application in Okta
-- Configure Salesforce as a SAML Service Provider
-- Exchange SAML metadata
-- Configure Assertion Consumer Service (ACS) URL
-- Configure Entity ID (Audience URI)
-- Configure NameID format
-- Assign users and groups
-- Test IdP-Initiated SSO
-- Troubleshoot common SAML errors
+Created a Salesforce Developer org and enabled Single Sign-On settings along with SAML authentication, since Salesforce needs to be ready to accept SAML assertions before Okta can be pointed at it.
 
----
+### 2. Built a custom SAML app in Okta
 
-## Configuration Steps
+Configured the core SAML fields: the Single Sign-On URL (ACS URL), Audience URI (Entity ID), NameID format, and the application username format Okta would send over.
 
-### 1. Created Salesforce Developer Org
+### 3. Fed that config back into Salesforce
 
-- Created a Salesforce Developer account
-- Enabled Single Sign-On settings
-- Enabled SAML authentication
+Took the values Okta generated and configured them on the Salesforce side — Login URL, Entity ID, Identity Provider Certificate, and Identity Provider Login URL. This is really the "handshake" step: both sides need to agree on the same identifiers or the trust relationship never establishes.
 
----
+### 4. Assigned users
 
-### 2. Created a Custom SAML Application in Okta
+Assigned the Salesforce app to an Okta group and confirmed assigned users could see it show up on their Okta dashboard.
 
-Configured:
+![Application Assignment](./screenshots/app-assignment.png)
 
-- Single Sign-On URL (ACS URL)
-- Audience URI (Entity ID)
-- NameID Format
-- Application Username
+### 5. Tested the login flow
 
----
+Ran through the full flow: user logs into Okta → clicks Salesforce tile → lands in Salesforce, fully authenticated, no Salesforce password prompt.
 
-### 3. Configured Salesforce
+![Successful Salesforce Login](./screenshots/successful-login-1.png)
+![Successful Salesforce Login Confirmation](./screenshots/successful-login-2.png)
 
-Configured:
+## Where it actually broke (and how I fixed it)
 
-- Login URL
-- Entity ID
-- Identity Provider Certificate
-- Identity Provider Login URL
+This integration didn't work on the first try, which honestly taught me more than if it had.
 
----
+**Federation ID mismatch** — my first few login attempts failed outright. Turned out the Federation ID Salesforce expected didn't match the NameID Okta was actually sending in the assertion. Once I aligned both sides to use the same identifier, logins started going through.
 
-### 4. Assigned Users
+**Username mapping** — related issue: I had to double-check that the Salesforce username field matched exactly what was coming through in the SAML assertion, since a mismatch there silently breaks the login even if the certificate and URLs are all correct.
 
-Assigned the Salesforce application to an Okta group.
+**Certificate trust** — had to import Okta's signing certificate into Salesforce manually so Salesforce would actually trust assertions coming from Okta rather than rejecting them outright.
 
-Verified that assigned users could see the Salesforce application on the Okta dashboard.
-<img width="792" height="118" alt="image" src="https://github.com/user-attachments/assets/a7960827-afcd-4b59-99cf-1c7e914e1a32" />
-
-<img width="773" height="52" alt="image" src="https://github.com/user-attachments/assets/b2bd144b-d75c-4fa4-a533-d82c9d4031e1" />
-
-
-
----
-
-### 5. Tested Single Sign-On
-
-Verified successful login flow:
-
-User → Okta Dashboard → Salesforce
-
-No Salesforce password was required after successful authentication through Okta.
-
----
-
-## Challenges Encountered
-
-### Federation ID confusion
-
-Initially experienced login failures because the Federation ID and NameID configuration did not match.
-
-Resolved by ensuring Salesforce expected the same identifier sent by Okta.
-
----
-
-### Username Mapping
-
-Verified that the Salesforce username matched the value sent within the SAML assertion.
-
----
-
-### Certificate Validation
-
-Imported the Okta signing certificate into Salesforce to establish trust.
-
----
-
-### Login Testing
-
-Repeated multiple login tests until the SAML assertion was successfully accepted by Salesforce.
-
----
-
-## Security Concepts Learned
-
-- Identity Provider (IdP)
-- Service Provider (SP)
-- SAML Assertion
-- Assertion Consumer Service (ACS)
-- Entity ID
-- Audience Restriction
-- NameID
-- X.509 Signing Certificate
-- Digital Signature
-- Single Sign-On (SSO)
-
----
+It took a handful of repeated login attempts, tweaking one variable at a time, before the assertion was fully accepted — which is probably closer to how this goes in a real environment than a one-shot clean setup would be.
 
 ## Screenshots
 
-### Okta SAML Application
-<img width="791" height="820" alt="image" src="https://github.com/user-attachments/assets/e970ab6d-4fe8-4051-bfc7-34aeb7f42387" />
+![Okta SAML Application](./screenshots/okta-saml-app.png)
+*Custom SAML application configured in Okta*
 
+![Salesforce SSO Configuration](./screenshots/salesforce-sso-config-1.png)
+![Salesforce SSO Configuration](./screenshots/salesforce-sso-config-2.png)
+![Salesforce SSO Configuration](./screenshots/salesforce-sso-config-3.png)
+*Salesforce Single Sign-On settings*
 
----
+![SAML Settings](./screenshots/saml-settings-1.png)
+![SAML Settings](./screenshots/saml-settings-2.png)
+![SAML Settings](./screenshots/saml-settings-3.png)
+![SAML Settings](./screenshots/saml-settings-4.png)
+*Detailed SAML configuration values*
 
-### Salesforce Single Sign-On Configuration
+## Concepts covered
 
-<img width="878" height="792" alt="image" src="https://github.com/user-attachments/assets/1b26a349-967d-45fc-822d-e3d0d0cb097f" />
+Identity Provider (IdP), Service Provider (SP), SAML assertion, Assertion Consumer Service (ACS), Entity ID, Audience Restriction, NameID, X.509 signing certificates, digital signatures, and Single Sign-On.
 
-<img width="824" height="820" alt="image" src="https://github.com/user-attachments/assets/75895539-db1f-4ebd-96e5-fe74b91a49b6" />
+## Skills demonstrated
 
-<img width="1069" height="822" alt="image" src="https://github.com/user-attachments/assets/06d10cad-0541-4a3e-af8a-d32314be43e9" />
-
-
----
-
-### Application Assignments
-
-<img width="1134" height="643" alt="image" src="https://github.com/user-attachments/assets/541d8cc0-e271-47f4-b9a8-6327efaa49ad" />
-
-
----
-
-### Successful Salesforce Login
-
-<img width="1911" height="911" alt="image" src="https://github.com/user-attachments/assets/dd5472ce-e6fa-4f0b-b2fc-1938128e5929" />
-<img width="1145" height="711" alt="image" src="https://github.com/user-attachments/assets/2e1aabd1-c897-4c56-8a40-86be29d2c214" />
-
-
-
----
-
-### SAML Settings
-
-<img width="1695" height="524" alt="image" src="https://github.com/user-attachments/assets/33e0dfa1-4b15-4101-b68a-89cebde91c80" />
-<img width="1900" height="984" alt="image" src="https://github.com/user-attachments/assets/32c36c71-a66a-4e02-a877-eafd43056e59" />
-<img width="1697" height="802" alt="image" src="https://github.com/user-attachments/assets/8ada42e0-9465-49f4-bef0-662283a2ce48" />
-<img width="1716" height="748" alt="image" src="https://github.com/user-attachments/assets/55fe2554-4918-4d3f-b447-e542f4e33c6b" />
-
-
-
-
-
----
+Configuring a custom SAML app in Okta, configuring a service provider (Salesforce) to trust that app, exchanging SAML metadata between IdP and SP, assigning users/groups to the app, and troubleshooting real federation errors rather than just following a clean happy-path tutorial.
 
 ## Outcome
 
-Successfully integrated Salesforce with Okta using SAML 2.0 authentication.
-
-Users authenticated through Okta and gained seamless access to Salesforce using Single Sign-On without entering Salesforce credentials.
-
-This project provided practical experience configuring enterprise SAML integrations, exchanging trust metadata, assigning users through Okta, and troubleshooting common federation issues.
+Salesforce and Okta are now fully federated over SAML 2.0 — users authenticate once through Okta and get into Salesforce with zero additional credentials. The debugging process (Federation ID mismatch, username mapping, certificate trust) ended up being the most valuable part of this project, since that's the stuff that actually goes wrong in production SAML setups, not just the initial configuration screens.
