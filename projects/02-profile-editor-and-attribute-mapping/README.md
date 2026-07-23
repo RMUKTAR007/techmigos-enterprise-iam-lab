@@ -29,7 +29,8 @@ Configure and validate attribute mappings to ensure accurate identity data is sh
 
 Before making changes, I reviewed the default Okta User Profile to understand which attributes exist out of the box (name, email, login, etc.) and which would need to be added for enterprise use cases.
 
-![Okta User Profile](./screenshots/01-okta-user-profile.png)
+![Okta User Profile](<img width="781" height="762" alt="image" src="https://github.com/user-attachments/assets/8079503d-e4c4-4a1a-a6df-5429e6f9dea9" />
+)
 
 ---
 
